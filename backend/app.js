@@ -4,6 +4,8 @@ console.log(`\n\n\n\n\n\n\n\n\n
 import 'dotenv/config';
 import express from 'express';
 import mongoose from 'mongoose';
+import CustomError from './utils/CustomError.js';
+
 
 
 import restaurantRoutes from './routes/restaurants.js'
@@ -29,6 +31,18 @@ app.use('/restaurants', restaurantRoutes);
 
 app.get('/', (req, res) => {
   res.redirect('/restaurants');
+})
+
+// error handling
+app.all('*', (req, res, next) => {
+  next(new CustomError('Page not found', 404));
+})
+app.use((err, req, res, next) => {
+  const { statusCode = 500 } = err;
+  if (!err.message) err.message = 'Something went wrong'
+  console.log(err.message);
+  // res.status(statusCode).render('error', { err });
+  res.status(statusCode).send(err);
 })
 
 
