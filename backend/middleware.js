@@ -14,3 +14,6 @@ const validateRestaurant = (req, res, next) => {
 }
 
 export { validateRestaurant };
+
+
+// todo: travis video 124, add middleware if the restaurant already exists
