@@ -1,15 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // pages
 import Home from "./pages/Home";
-import Create from "./pages/Create";
+import New from "./pages/New";
 // styles
 import './App.css';
 
 function App() {
   return (
-    <div>
-      App.js
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/new" element={<New />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
