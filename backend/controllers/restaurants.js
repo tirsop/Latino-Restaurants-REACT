@@ -1,5 +1,5 @@
-// import Restaurant from '../models/restaurant.js';
-// import fetch from "node-fetch";
+import Restaurant from '../models/restaurant.js';
+import fetch from "node-fetch";
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 
 const restaurants = {
@@ -25,7 +25,7 @@ const restaurants = {
     // console.log({ restaurant });
     // req.flash('success', 'Thank you! The restaurant was added 😌');
     // res.redirect(`/restaurants`);
-    res.send('create bro')
+    console.log(req.body);
   }
 }
 
