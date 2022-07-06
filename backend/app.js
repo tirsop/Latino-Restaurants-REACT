@@ -41,7 +41,7 @@ app.all('*', (req, res, next) => {
 app.use(errorMiddleware)                                                  // middleware that sets statusCode and message
 
 
-const port = 3000;
+const port = 3001;
 app.listen(port, () => {
   console.log(`--------------console.log\nListening at:\nhttp://localhost:${port}\n`);
 })
