@@ -6,15 +6,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import CustomError from './utils/CustomError.js';
 import errorMiddleware from './utils/errorMiddleware.js';
-
-
-
 import restaurantRoutes from './routes/restaurants.js'
-
 
 const app = express();                                                    // abbreviation of the code
 const dbUrl = process.env.DB_URL;
-
 
 mongoose.connect(dbUrl)
   .then(() => console.log(`--------------console.log\nDatabase connected\n`))
@@ -26,7 +21,6 @@ mongoose.connect(dbUrl)
 
 app.use(express.json())                                                   // need these two lines to use req.body
 app.use(express.urlencoded({ extended: true }))
-
 
 app.use('/restaurants', restaurantRoutes);                                // import restaurant routes
 
