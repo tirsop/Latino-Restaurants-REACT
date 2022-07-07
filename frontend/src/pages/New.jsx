@@ -1,4 +1,7 @@
 import { useState } from "react"
+import { Link } from 'react-router-dom'
+// styles
+import './New.css'
 
 
 export default function New() {
@@ -17,7 +20,7 @@ export default function New() {
       <div className="row">
         <div className="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
           <div className="card shadow mb-5">
-            <img className="card-img-top" src="https://images.unsplash.com/photo-1630175860333-5131bda75071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="paella iamge" />
+            <img className="card-img-top new-form-img" src="https://images.unsplash.com/photo-1630175860333-5131bda75071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="paella" />
             <div className="card-body">
               <h5 className="card-title text-center">Add a new Restaurant!</h5>
 
@@ -81,6 +84,10 @@ export default function New() {
                 </div>
 
               </form>
+
+              <Link to='/restaurants' className="text-decoration-none link-back">
+                Back to all restaurants
+              </Link>
 
             </div>
           </div>
