@@ -7,12 +7,14 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/restaurants" element={<Home />} />
-        <Route path="/restaurants/new" element={<New />} />
-      </Routes>
-    </BrowserRouter>
+    <main>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/restaurants" element={<Home />} />
+          <Route path="/restaurants/new" element={<New />} />
+        </Routes>
+      </BrowserRouter>
+    </main>
   );
 }
 

@@ -18,3 +18,5 @@ export default function Header() {
     </div>
   )
 }
+
+ // todo: button occupies more space than it should be in small screen
