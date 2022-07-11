@@ -1,6 +1,7 @@
 // components
 import Header from "../components/Header";
 import Map from "../components/Map";
+import List from "../components/List";
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
     <>
       <Header />
       <Map />
+      <List />
     </>
   )
 }

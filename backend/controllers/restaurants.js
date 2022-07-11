@@ -10,9 +10,9 @@ const generateToken = (id) => {
 
 const restaurants = {
   index: async (req, res) => {
-    // const restaurants = await Restaurant.find({});
+    const restaurants = await Restaurant.find({});
     // res.render('restaurants/index', { restaurants });
-    res.send('index bro')
+    res.status(200).json({ restaurants })
   },
   newRestaurant: (req, res) => {
     // res.render('restaurants/new');

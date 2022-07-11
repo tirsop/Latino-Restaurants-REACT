@@ -22,7 +22,21 @@ mongoose.connect(dbUrl)
 app.use(express.json())                                                   // need these two lines to use req.body
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/restaurants', restaurantRoutes);                                // import restaurant routes
+// CORS Headers => Required for cross-origin/ cross-server communication
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  );
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'GET, POST, PATCH, DELETE, OPTIONS'
+  );
+  next();
+});
+
+app.use('/api/restaurants', restaurantRoutes);                                // import restaurant routes
 
 app.get('/', (req, res) => {
   res.redirect('/restaurants');                                           // home page redirects to /restaurants bc there's no homepage
