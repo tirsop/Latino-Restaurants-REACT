@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-
+// components
+import Restaurant from "./Restaurant";
 
 export default function List() {
   const [restaurants, setRestaurants] = useState([]);
@@ -24,11 +25,13 @@ export default function List() {
   return (
     <div className="">
       {isPending && <p className='loading'>Loading.........</p>}
-      {restaurants && <div className="">
-        {restaurants.map(restaurant => (
-          <p className="">{restaurant.name}</p>
-        ))}
-      </div>}
+      {restaurants && (
+        <div className="container">
+          <div className="row">
+            {restaurants.map(restaurant => <Restaurant key={restaurant._id} restaurant={restaurant} />)}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
