@@ -9,10 +9,8 @@ export default function List({ restaurants }) {
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        {restaurants.map(restaurant => <Restaurant key={restaurant._id} restaurant={restaurant} />)}
-      </div>
+    <div className="row">
+      {restaurants.map(restaurant => <Restaurant key={restaurant._id} restaurant={restaurant} />)}
     </div>
   )
 }
