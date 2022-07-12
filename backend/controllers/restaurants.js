@@ -14,10 +14,10 @@ const restaurants = {
     // res.render('restaurants/index', { restaurants });
     res.status(200).json({ restaurants })
   },
-  newRestaurant: (req, res) => {
-    // res.render('restaurants/new');
-    res.send('new bro')
-  },
+  // newRestaurant: (req, res) => {
+  //   res.render('restaurants/new');
+  //   res.send('new bro')
+  // },
   createRestaurant: async (req, res) => {
     const restaurant = new Restaurant(req.body.restaurant);
     const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${req.body.restaurant.location}.json?bbox=139.390154,35.236550,140.045214,35.902352&limit=1&access_token=${mapBoxToken}`);
