@@ -7,7 +7,7 @@ const router = express.Router();
 
 
 router.get('/', catchAsync(restaurants.index));
-router.get('/new', restaurants.newRestaurant);
+// router.get('/new', restaurants.newRestaurant);
 router.post('/', validateRestaurant, catchAsync(restaurants.createRestaurant));
 
 export default router;

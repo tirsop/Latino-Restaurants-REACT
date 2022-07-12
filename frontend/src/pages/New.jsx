@@ -5,15 +5,46 @@ import './New.css'
 
 
 export default function New() {
-  const [name, setName] = useState('')
-  const [location, setLocation] = useState('')
-  const [country, setCountry] = useState('Spain')
-  const [url, setUrl] = useState('')
-  const [image, setImage] = useState('')
+  // const [name, setName] = useState('')
+  // const [location, setLocation] = useState('')
+  // const [country, setCountry] = useState('Spain')
+  // const [url, setUrl] = useState('')
+  // const [image, setImage] = useState('')
 
-  const handleSubmit = (e) => {
+  const [restaurant, setFormData] = useState({
+    name: '',
+    location: '',
+    country: '',
+    url: '',
+    image: ''
+  })
+  const { name, location, country, url, image } = restaurant
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    try {
+      const response = await fetch('http://localhost:3001/api/restaurants', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ restaurant })
+      });
+      const data = await response.json();
+      console.log(data);
+
+    } catch (error) {
+      alert(error.message || 'Something went wrong!');
+    }
   }
+
+  const handleChange = e => {
+    setFormData(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }))
+  }
+
 
   return (
     <div className='container'>
@@ -30,8 +61,9 @@ export default function New() {
                   <label className="form-label" htmlFor="name">Name:</label>
                   <input type="text" id='name'
                     className="form-control"
-                    onChange={(e) => setName(e.target.value)}
-                    name="restaurant[name]"
+                    onChange={handleChange}
+                    // name="restaurant[name]"
+                    name="name"
                     value={name}
                     required />
                 </div>
@@ -40,8 +72,9 @@ export default function New() {
                   <label className="form-label" htmlFor="location">Nearest Station or Neighborhood:</label>
                   <input type="text" id='location'
                     className="form-control"
-                    onChange={(e) => setLocation(e.target.value)}
-                    name="restaurant[location]"
+                    onChange={handleChange}
+                    // name="restaurant[location]"
+                    name="location"
                     value={location}
                     required />
                 </div>
@@ -50,8 +83,9 @@ export default function New() {
                   <label className="form-label" htmlFor="country">Food from which country?</label>
                   <select id="country"
                     className="form-select"
-                    onChange={(e) => setCountry(e.target.value)}
-                    name="restaurant[country]"
+                    onChange={handleChange}
+                    // name="restaurant[country]"
+                    name="country"
                     value={country} >
                     <option value="spain">Spain</option>
                     <option value="mexico">Mexico</option>
@@ -64,8 +98,8 @@ export default function New() {
                   <label className="form-label" htmlFor="url">Google Maps URL:</label>
                   <input type="text" id='url'
                     className="form-control"
-                    onChange={(e) => setUrl(e.target.value)}
-                    name="restaurant[url]"
+                    onChange={handleChange}
+                    name="url"
                     value={url}
                     required />
                 </div>
@@ -74,8 +108,8 @@ export default function New() {
                   <label className="form-label" htmlFor="image">Image URL</label>
                   <input type="text" id='image'
                     className="form-control"
-                    onChange={(e) => setImage(e.target.value)}
-                    name="restaurant[image]"
+                    onChange={handleChange}
+                    name="image"
                     value={image} />
                 </div>
 
