@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // styles
 import './New.css'
 
@@ -11,14 +11,15 @@ export default function New() {
   // const [url, setUrl] = useState('')
   // const [image, setImage] = useState('')
 
-  const [restaurant, setFormData] = useState({
+  const [formData, setFormData] = useState({
     name: '',
     location: '',
-    country: '',
+    country: 'spain',
     url: '',
     image: ''
   })
-  const { name, location, country, url, image } = restaurant
+  const { name, location, country, url, image } = formData
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -28,11 +29,11 @@ export default function New() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ restaurant })
+        body: JSON.stringify({ 'restaurant': formData })
       });
       const data = await response.json();
       console.log(data);
-
+      navigate('/restaurants')
     } catch (error) {
       alert(error.message || 'Something went wrong!');
     }
