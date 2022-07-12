@@ -1,7 +1,7 @@
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import { useEffect, useRef, useState } from 'react';
 console.log(process.env.REACT_APP_MAPBOX_TOKEN);
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
 export default function Map() {
   const mapContainer = useRef(null);
@@ -21,7 +21,7 @@ export default function Map() {
   });
 
   return (
-    <div style={{ width: '100px', height: "100px" }}>
+    <div style={{ width: '600px', height: "400px" }}>
       <div ref={mapContainer} className="map-container" />
     </div>
   )
