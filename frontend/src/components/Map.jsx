@@ -1,7 +1,5 @@
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import { useEffect, useRef, useState } from 'react';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 // styles
 import './Map.css'
 
