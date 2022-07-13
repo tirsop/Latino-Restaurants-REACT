@@ -26,8 +26,8 @@ export default function Map({ restaurants }) {
 
 
   return (
-    <div>
-      <div ref={mapContainer} className="map-container" />
-    </div>
+    // <div>
+    <div ref={mapContainer} className="map-container" />
+    // </div>
   )
 }

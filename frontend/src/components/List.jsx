@@ -1,6 +1,8 @@
-// import { useEffect, useState } from "react";
+
 // components
 import Restaurant from "./Restaurant";
+// styles
+import './List.css'
 
 export default function List({ restaurants }) {
 
@@ -9,8 +11,10 @@ export default function List({ restaurants }) {
   }
 
   return (
-    <div className="row">
-      {restaurants.map(restaurant => <Restaurant key={restaurant._id} restaurant={restaurant} />)}
+    <div className="list">
+      <div className="row">
+        {restaurants.map(restaurant => <Restaurant key={restaurant._id} restaurant={restaurant} />)}
+      </div>
     </div>
   )
 }
