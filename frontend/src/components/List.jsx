@@ -1,6 +1,7 @@
 import { FaGripLines } from 'react-icons/fa'
 // components
 import Restaurant from "./Restaurant";
+import Footer from './Footer'
 // styles
 import './List.css'
 
@@ -18,6 +19,7 @@ export default function List({ restaurants }) {
           <p className="">{restaurants.length} restaurants</p>
         </div>
         {restaurants.map(restaurant => <Restaurant key={restaurant._id} restaurant={restaurant} />)}
+        <Footer />
       </div>
     </div>
   )
