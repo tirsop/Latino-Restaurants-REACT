@@ -12,14 +12,15 @@ mongoose.connect(dbUrl)
   })
 
 const addRestaurant = async () => {
+  const restTotal = await Restaurant.count();
   await Restaurant.deleteMany({});
-  console.log("All restaurants deleted.");
+  console.log(`${restTotal} restaurants deleted.`);
   console.log("Creating new restaurants...");
   await Restaurant.insertMany([
     {
       name: 'Miguel y Juani',
       location: 'Shinjuku',
-      country: 'Spanish',
+      country: 'spain',
       url: 'https://goo.gl/maps/v1zuSmhJy7jVYPep8',
       image: 'https://tblg.k-img.com/resize/660x370c/restaurant/images/Rvw/60113/60113285.jpg?token=0745494&api=v2',
       geometry: {
@@ -33,7 +34,7 @@ const addRestaurant = async () => {
     {
       name: 'EL ROSSELLO',
       location: 'Meguro',
-      country: 'Spanish',
+      country: 'spain',
       url: 'https://goo.gl/maps/BfMftRk9ADCWwxLH8',
       image: 'https://tabelog.com/imgview/original?id=r0234379775327',
       geometry: {
@@ -47,7 +48,7 @@ const addRestaurant = async () => {
     {
       name: 'Amets',
       location: 'Asakusa',
-      country: 'Spanish',
+      country: 'spain',
       url: 'https://goo.gl/maps/qZnwv9aaip1nQdb89',
       image: 'https://tabelog.com/imgview/original?id=r9861131790870',
       geometry: {
@@ -61,7 +62,7 @@ const addRestaurant = async () => {
     {
       name: 'El Chateo',
       location: 'Ginza',
-      country: 'Spanish',
+      country: 'spain',
       url: 'https://g.page/elchateo-ginza?share',
       image: 'https://tabelog.com/imgview/original?id=r5842889524483',
       geometry: {
@@ -75,7 +76,7 @@ const addRestaurant = async () => {
     {
       name: 'La Pesquera MARISQUERIA',
       location: 'Otemachi',
-      country: 'Spanish',
+      country: 'spain',
       url: 'https://g.page/lapesqueramarisqueria?share',
       image: 'https://tabelog.com/imgview/original?id=r93948142018369',
       geometry: {
@@ -89,7 +90,7 @@ const addRestaurant = async () => {
     {
       name: 'Bar Portillo de sal y amor',
       location: 'Naka-Meguro',
-      country: 'Spanish',
+      country: 'spain',
       url: 'https://g.page/Bar-Portillo-Nakameguro?share',
       image: 'https://tabelog.com/imgview/original?id=r53941147584351',
       geometry: {
@@ -103,7 +104,7 @@ const addRestaurant = async () => {
     {
       name: 'La Coquina cervecería',
       location: 'Shibuya',
-      country: 'Spanish',
+      country: 'spain',
       url: 'https://g.page/LaCoquina?share',
       image: 'https://tabelog.com/imgview/original?id=r66711129935433',
       geometry: {
@@ -117,7 +118,7 @@ const addRestaurant = async () => {
     {
       name: 'La Cabina',
       location: 'Shibuya',
-      country: 'Mexican',
+      country: 'mexico',
       url: 'https://g.page/lacabinatokyo?share',
       image: 'https://tabelog.com/imgview/original?id=r52706115508974',
       geometry: {
@@ -131,7 +132,7 @@ const addRestaurant = async () => {
     {
       name: 'Frijoles',
       location: 'Daikanyama',
-      country: 'Mexican',
+      country: 'mexico',
       url: 'https://goo.gl/maps/7uourPg8ednRXFw98',
       image: 'https://tabelog.com/imgview/original?id=r99406119376673',
       geometry: {
@@ -145,7 +146,7 @@ const addRestaurant = async () => {
     {
       name: 'Bépocah',
       location: 'Harayuku',
-      country: 'Perú',
+      country: 'peru',
       url: 'https://g.page/bepocah?share',
       image: 'https://tabelog.com/imgview/original?id=r5077385697241',
       geometry: {
@@ -159,7 +160,7 @@ const addRestaurant = async () => {
     {
       name: 'Medellin Yokohama',
       location: 'Yokohama',
-      country: 'Colombia',
+      country: 'colombia',
       url: 'https://goo.gl/maps/UhfhWReTQbooS53PA',
       image: 'https://tabelog.com/imgview/original?id=r5706365472998',
       geometry: {
@@ -173,7 +174,7 @@ const addRestaurant = async () => {
     {
       name: 'Mi Choripan',
       location: 'Yoyogi',
-      country: 'Argentina',
+      country: 'argentina',
       url: 'https://goo.gl/maps/ijZRJcMp4LRLi1jX6',
       image: 'https://tabelog.com/imgview/original?id=r0905886571645',
       geometry: {
@@ -187,9 +188,12 @@ const addRestaurant = async () => {
   ]);
 };
 
-const restTotal = await Restaurant.count();
-addRestaurant().then(() => {
-  mongoose.connection.close();
-  console.log(`${restTotal} restaurants created!`);
-});
+addRestaurant()
+  .then(() => {
+    return Restaurant.count();
+  })
+  .then((restTotal) => {
+    mongoose.connection.close();
+    console.log(`${restTotal} restaurants created!`);
+  })
 
