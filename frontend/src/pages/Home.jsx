@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Map />
+      <Map restaurants={restaurants} />
       {/* {error && <p>{error}</p>} */}
       {isPending && <p>Loading...</p>}
       {restaurants && <List restaurants={restaurants} />}
