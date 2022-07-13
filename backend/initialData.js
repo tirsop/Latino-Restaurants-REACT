@@ -196,4 +196,7 @@ addRestaurant()
     mongoose.connection.close();
     console.log(`${restTotal} restaurants created!`);
   })
+  .catch(e => {
+    console.log("ERROR: ", e);
+  })
 
