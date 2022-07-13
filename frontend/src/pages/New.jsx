@@ -64,7 +64,6 @@ export default function New() {
                   <input type="text" id='name'
                     className="form-control"
                     onChange={handleChange}
-                    // name="restaurant[name]"
                     name="name"
                     value={name}
                     required />
@@ -75,18 +74,16 @@ export default function New() {
                   <input type="text" id='location'
                     className="form-control"
                     onChange={handleChange}
-                    // name="restaurant[location]"
                     name="location"
                     value={location}
                     required />
                 </div>
 
-                <div className="mb-3">
+                {/* <div className="mb-3">
                   <label className="form-label" htmlFor="country">Food from which country?</label>
                   <select id="country"
                     className="form-select"
                     onChange={handleChange}
-                    // name="restaurant[country]"
                     name="country"
                     value={country} >
                     <option value="spain">Spain</option>
@@ -94,6 +91,27 @@ export default function New() {
                     <option value="peru">Peru</option>
                     <option value="others">Other Latin Countries</option>
                   </select>
+                </div> */}
+
+                <div className="mb-3">
+                  <span className="form-label">Food from which country?</span>
+                  <div className="flag-buttons">
+                    <label>
+                      <input type="radio" id="spain"
+                        value="spain"
+                        name="country"
+                        onChange={handleChange}
+                        checked />
+                      <p className="btn-flag">🇪🇸</p>
+                    </label>
+                    <label>
+                      <input type="radio" id="mexico"
+                        value="mexico"
+                        name="country"
+                        onChange={handleChange} />
+                      <p className="btn-flag">🇲🇽</p>
+                    </label>
+                  </div>
                 </div>
 
                 <div className="mb-3">
