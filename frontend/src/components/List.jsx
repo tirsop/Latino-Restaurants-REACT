@@ -12,6 +12,7 @@ export default function List({ restaurants }) {
   }
 
   return (
+    // filter by nationality
     <div className="list">
       <div className="row">
         <FaGripLines className="griplines" />

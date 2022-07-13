@@ -13,6 +13,8 @@ export default function Restaurant({ restaurant }) {
           </div>
           <div className="">
             {restaurant.country === 'spain' && <div className="">🇪🇸</div>}
+            {restaurant.country === 'mexico' && <div className="">🇲🇽</div>}
+            {/* todo: check conditonal above and style */}
           </div>
         </div>
       </a>
