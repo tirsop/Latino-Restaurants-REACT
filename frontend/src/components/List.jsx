@@ -1,4 +1,4 @@
-
+import { FaGripLines } from 'react-icons/fa'
 // components
 import Restaurant from "./Restaurant";
 // styles
@@ -13,6 +13,10 @@ export default function List({ restaurants }) {
   return (
     <div className="list">
       <div className="row">
+        <FaGripLines className="griplines" />
+        <div className="results-number">
+          <p className="">{restaurants.length} restaurants</p>
+        </div>
         {restaurants.map(restaurant => <Restaurant key={restaurant._id} restaurant={restaurant} />)}
       </div>
     </div>

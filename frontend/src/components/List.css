@@ -1,6 +1,19 @@
 .list {
-  background-color: rgb(245, 245, 238);
+  background-color: #F4F4F4;
   position: absolute;
-  margin-top: 48vh;
+  margin-top: 47vh;
   width: 100%;
+  padding: 20px 20px 0;
+  border-radius: 30px 30px 0 0;
+  border-top: 1px solid #e1e1e1;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.griplines {
+  margin-bottom: 6px;
+}
+.results-number {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+
 }
