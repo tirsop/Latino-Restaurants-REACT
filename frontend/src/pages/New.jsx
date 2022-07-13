@@ -102,14 +102,14 @@ export default function New() {
                         name="country"
                         onChange={handleChange}
                         checked />
-                      <p className="btn-flag" title="Spain">🇪🇸</p>  {/* title attribute to display the country's name when hover */}
+                      <p className="btn-flag-form" title="Spain">🇪🇸</p>  {/* title attribute to display the country's name when hover */}
                     </label>
                     <label>
                       <input type="radio" id="mexico"
                         value="mexico"
                         name="country"
                         onChange={handleChange} />
-                      <p className="btn-flag" title="Mexico">🇲🇽</p>
+                      <p className="btn-flag-form" title="Mexico">🇲🇽</p>
                     </label>
                   </div>
                 </div>

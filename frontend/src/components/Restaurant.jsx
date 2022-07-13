@@ -12,8 +12,8 @@ export default function Restaurant({ restaurant }) {
             <p className="text-muted fs-6">{restaurant.location}</p>
           </div>
           <div className="">
-            {restaurant.country === 'spain' && <div className="">🇪🇸</div>}
-            {restaurant.country === 'mexico' && <div className="">🇲🇽</div>}
+            {restaurant.country === 'spain' && <div className="btn-flag-card">🇪🇸</div>}
+            {restaurant.country === 'mexico' && <div className="btn-flag-card">🇲🇽</div>}
             {/* todo: check conditonal above and style */}
           </div>
         </div>
