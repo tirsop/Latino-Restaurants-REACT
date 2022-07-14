@@ -3,6 +3,7 @@ console.log(`\n\n\n\n\n\n\n\n\n
 
 import 'dotenv/config';
 import express from 'express';
+import path from 'path';
 import mongoose from 'mongoose';
 import CustomError from './utils/CustomError.js';
 import errorMiddleware from './utils/errorMiddleware.js';
