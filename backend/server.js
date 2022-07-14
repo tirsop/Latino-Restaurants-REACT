@@ -13,7 +13,7 @@ import restaurantRoutes from './routes/restaurants.js'
 const app = express();                                                    // abbreviation of the code
 const dbUrl = process.env.DB_URL;
 const __dirname = new URL('.', import.meta.url).pathname;
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 5000;
 
 
 mongoose.connect(dbUrl)
