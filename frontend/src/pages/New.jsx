@@ -51,7 +51,7 @@ export default function New() {
   return (
     <div className='container'>
       <div className="row">
-        <div className="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+        <div className="col-md-6 offset-md-3 col-xl-5 offset-xl-3">
           <div className="card shadow mb-5">
             <img className="card-img-top new-form-img" src="https://images.unsplash.com/photo-1630175860333-5131bda75071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="paella" />
             <div className="card-body">
@@ -110,6 +110,27 @@ export default function New() {
                         name="country"
                         onChange={handleChange} />
                       <p className="btn-flag-form" title="Mexico">🇲🇽</p>
+                    </label>
+                    <label>
+                      <input type="radio" id="peru"
+                        value="peru"
+                        name="country"
+                        onChange={handleChange} />
+                      <p className="btn-flag-form" title="Perú">🇵🇪</p>
+                    </label>
+                    <label>
+                      <input type="radio" id="colombia"
+                        value="colombia"
+                        name="country"
+                        onChange={handleChange} />
+                      <p className="btn-flag-form" title="Colombia">🇨🇴</p>
+                    </label>
+                    <label>
+                      <input type="radio" id="argentina"
+                        value="argentina"
+                        name="country"
+                        onChange={handleChange} />
+                      <p className="btn-flag-form" title="Argentina">🇦🇷</p>
                     </label>
                   </div>
                 </div>
