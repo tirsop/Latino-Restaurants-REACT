@@ -13,6 +13,7 @@ import restaurantRoutes from './routes/restaurants.js'
 const app = express();                                                    // abbreviation of the code
 const dbUrl = process.env.DB_URL;
 const __dirname = new URL('.', import.meta.url).pathname;
+const PORT = process.env.PORT || 3001
 
 
 mongoose.connect(dbUrl)
@@ -63,7 +64,6 @@ if (process.env.NODE_ENV === 'production') {
 app.use(errorMiddleware)                                                  // middleware that sets statusCode and message
 
 
-const port = 3001;
-app.listen(port, () => {
-  console.log(`--------------console.log\nListening at:\nhttp://localhost:${port}\n`);
+app.listen(PORT, () => {
+  console.log(`--------------console.log\nListening at:\nhttp://localhost:${PORT}\n`);
 })
