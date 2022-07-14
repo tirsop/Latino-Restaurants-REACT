@@ -42,10 +42,20 @@ app.get('/', (req, res) => {
   res.redirect('/restaurants');                                           // home page redirects to /restaurants bc there's no homepage
 })
 
+
+// Serve Frontend
+if (process.env.NODE_ENV === 'production') {
+  // Set build folder as static
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(__dirname, '../', 'frontend', 'build', 'index.html')
+  })
+}
+
 // error handling
-app.all('*', (req, res, next) => {
-  next(new CustomError('Page not found', 404));                           // all routes that don't match any above with throw an error
-})
+// app.all('*', (req, res, next) => {
+//   next(new CustomError('Page not found', 404));                           // all routes that don't match any above with throw an error
+// })
 app.use(errorMiddleware)                                                  // middleware that sets statusCode and message
 
 
