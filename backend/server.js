@@ -1,5 +1,3 @@
-console.log(`\n\n\n\n\n\n\n\n\n
-******************************************************************`);
 
 import 'dotenv/config';
 import express from 'express';
@@ -14,6 +12,8 @@ const app = express();                                                    // abb
 const dbUrl = process.env.DB_URL;
 const __dirname = new URL('.', import.meta.url).pathname;
 
+console.log(`\n\n\n\n\n\n\n\n\n
+******************************************************************`);
 
 
 mongoose.connect(dbUrl)
