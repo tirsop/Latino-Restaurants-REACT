@@ -65,5 +65,5 @@ app.use(errorMiddleware)                                                  // mid
 
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log(`--------------console.log\nListening at:\nhttp://localhost:${PORT}\n`);
+  console.log(`--------------console.log\nListening at:\nhttp://localhost:${process.env.PORT || 5000}\n`);
 })
