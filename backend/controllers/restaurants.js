@@ -11,6 +11,7 @@ const generateToken = (id) => {
 const restaurants = {
   index: async (req, res) => {
     const restaurants = await Restaurant.find({});
+    console.log("ye k pasa paco muxa grasia por la ayuda");
     // res.render('restaurants/index', { restaurants });
     res.status(200).json({ restaurants })
   },
