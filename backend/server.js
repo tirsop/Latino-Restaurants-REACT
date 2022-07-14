@@ -4,6 +4,7 @@ console.log(`\n\n\n\n\n\n\n\n\n
 import 'dotenv/config';
 import express from 'express';
 import path from 'path';
+import { URL } from 'url';
 import mongoose from 'mongoose';
 import CustomError from './utils/CustomError.js';
 import errorMiddleware from './utils/errorMiddleware.js';
@@ -11,6 +12,8 @@ import restaurantRoutes from './routes/restaurants.js'
 
 const app = express();                                                    // abbreviation of the code
 const dbUrl = process.env.DB_URL;
+const __dirname = new URL('.', import.meta.url).pathname;
+
 
 mongoose.connect(dbUrl)
   .then(() => console.log(`--------------console.log\nDatabase connected\n`))
