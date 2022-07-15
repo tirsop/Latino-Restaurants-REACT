@@ -8,7 +8,8 @@ import CustomError from './utils/CustomError.js';
 import errorMiddleware from './utils/errorMiddleware.js';
 import restaurantRoutes from './routes/restaurants.js'
 
-const app = express();                                                    // abbreviation of the code
+const app = express();
+const PORT = process.env.PORT || 5000;
 const dbUrl = process.env.DB_URL;
 const __dirname = new URL('.', import.meta.url).pathname;
 
@@ -41,7 +42,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/restaurants', restaurantRoutes);                                // import restaurant routes
+app.use('/api/restaurants', restaurantRoutes);                            // import restaurant routes
 
 app.get('/', (req, res) => {
   res.redirect('/restaurants');                                           // home page redirects to /restaurants bc there's no homepage
@@ -49,14 +50,6 @@ app.get('/', (req, res) => {
 
 
 // Serve Frontend
-// if (process.env.NODE_ENV === 'production') {
-//   // Set build folder as static
-//   app.use(express.static(path.join(__dirname, '../frontend/build')));
-//   app.get('*', (req, res) => {
-//     res.sendFile(__dirname, '../', 'frontend', 'build', 'index.html')
-//   })
-// }
-
 if (process.env.NODE_ENV === 'production') {
   // Set build folder as static
   app.use(express.static(path.join(__dirname, '../frontend/build')))
@@ -72,6 +65,6 @@ if (process.env.NODE_ENV === 'production') {
 app.use(errorMiddleware)                                                  // middleware that sets statusCode and message
 
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log(`--------------console.log\nListening at:\nhttp://localhost:${process.env.PORT || 5000}\n`);
+app.listen(PORT, () => {
+  console.log(`--------------console.log\nListening at:\nhttp://localhost:${PORT}\n`);
 })

@@ -17,7 +17,8 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       setIsPending(true);
-      const response = await fetch('/api/restaurants');
+      // const response = await fetch('http://localhost:3001/api/restaurants');    // development API
+      const response = await fetch('/api/restaurants');                         // production API
       const data = await response.json();
       setRestaurants(data.restaurants);
       setIsPending(false);
