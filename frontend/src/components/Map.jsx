@@ -71,7 +71,8 @@ export default function Map({ restaurants }) {
     // Clean up on unmount
     return () => map.remove();
 
-  }, []);
+  }, [restaurants]);
+
 
   const markerClicked = (title) => {
     window.alert(title);
