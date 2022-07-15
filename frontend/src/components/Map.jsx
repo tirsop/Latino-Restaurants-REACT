@@ -20,7 +20,11 @@ export default function Map({ restaurants }) {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [lng, lat],
-      zoom: zoom
+      zoom: zoom,
+      maxBounds: [
+        { lat: 35.195384, lng: 138.718320 }, // SW
+        { lat: 35.911546, lng: 140.290738 } // NE
+      ]
     });
   });
 
