@@ -44,9 +44,9 @@ app.use((req, res, next) => {
 
 app.use('/api/restaurants', restaurantRoutes);                            // import restaurant routes
 
-app.get('/', (req, res) => {
-  res.redirect('/restaurants');                                           // home page redirects to /restaurants bc there's no homepage
-})
+// app.get('/', (req, res) => {
+//   res.redirect('/restaurants');                                           // home page redirects to /restaurants bc there's no homepage
+// })
 
 
 // Serve Frontend
