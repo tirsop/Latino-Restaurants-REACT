@@ -3,14 +3,14 @@
   font-size: 26px;
 }
 .red-dot {
-  width: 4px;
-  height: 4px;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
   background-color: red;
   position: absolute;
-  top: 80px;
-  left: 250px;
-  box-shadow: 0px 0px 2px 0.5px rgb(0 0 0 / 26%);
+  top: 80.5px;
+  left: 251px;
+  /* box-shadow: 0px 0px 2px 0.5px rgb(0 0 0 / 26%); */
 }
 
 /* ----------- MEDIA QUERIES ---------- */

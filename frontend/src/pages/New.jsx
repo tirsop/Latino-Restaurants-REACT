@@ -34,7 +34,7 @@ export default function New() {
       });
       const data = await response.json();
       console.log(data);
-      navigate('/restaurants')
+      navigate('/')
     } catch (error) {
       alert(error.message || 'Something went wrong!');
     }
@@ -160,7 +160,7 @@ export default function New() {
 
               </form>
 
-              <Link to='/restaurants' className="text-decoration-none link-back">
+              <Link to='/' className="text-decoration-none link-back">
                 Back to all restaurants
               </Link>
 
