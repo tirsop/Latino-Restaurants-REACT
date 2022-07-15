@@ -10,19 +10,16 @@ main {
   max-width: 1200px;
   background: #fff;
   margin: 0 auto;
-  padding: 60px;
-  position: relative;
+  padding: 60px 0 0;
+  position: relative; 
+  /* INFO: position relative bc the Map is fixed and the List is absolute */
 }
 
 
 /* --------------- MEDIA_QUERIES--------------- */
 @media (max-width: 767px) {
-  main {
-      padding: 30px;
-  }
+
 }
 @media (max-width: 456px) {
-  main {
-      padding: 14px;
-  }
+
 }

@@ -1,3 +1,32 @@
+.span-domain {
+  font-weight: 300;
+  font-size: 26px;
+}
+.red-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 80px;
+  left: 250px;
+  box-shadow: 0px 0px 2px 0.5px rgb(0 0 0 / 26%);
+}
+
+/* ----------- MEDIA QUERIES ---------- */
+@media (max-width: 1250px) {
+  .header {
+    padding: 0 24px;
+  }
+  .red-dot { width: 0px;}
+}
+@media (max-width: 456px) {
+  .header {
+    padding: 0 8px;
+  }
+}
+
+/* ----------- ADD NEW RESTAURANT button ---------- */
 .buttons {
   font-size: 1rem;
   padding: 0.33em 0.89em;
@@ -5,7 +34,6 @@
   border-radius: .2em;
   text-align: center;
 }
-/* ----------- ADD NEW RESTAURANT button ---------- */
 .button-add::before {               
   content: "🥘 ";
 }
