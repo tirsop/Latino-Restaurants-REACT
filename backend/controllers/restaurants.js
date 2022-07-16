@@ -22,6 +22,9 @@ const restaurants = {
     const restaurant = new Restaurant(req.body.restaurant);
     const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${req.body.restaurant.location}.json?bbox=139.390154,35.236550,140.045214,35.902352&limit=1&access_token=${mapBoxToken}`);
     const data = await response.json();
+    if (!response.ok || response.status !== 200) {
+      console.log(response);
+    }
     // if (!data.features[0]) {
     //   req.flash('error', 'Cannot locate the restaurant. Please, introduce a different address 🤕');
     //   return res.redirect('restaurants/new');
