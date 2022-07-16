@@ -12,40 +12,37 @@ export default function New() {
   // const [url, setUrl] = useState('')
   // const [image, setImage] = useState('')
 
-  const [formData, setFormData] = useState({
-    name: '',
-    location: '',
-    country: 'spain',
-    url: '',
-    image: ''
-  })
-  const { name, location, country, url, image } = formData
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries([...formData.entries()]);
     try {
-      const response = await fetch('http://localhost:3001/api/restaurants', {
+      // const response = await fetch('http://localhost:3001/api/restaurants', {
+      const response = await fetch('/api/restaurants', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ 'restaurant': formData })
+        body: JSON.stringify({ 'restaurant': data })
       });
-      const data = await response.json();
-      console.log(data);
+      const resData = await response.json();
+      console.log(resData);
       navigate('/')
     } catch (error) {
       alert(error.message || 'Something went wrong!');
     }
   }
 
-  const handleChange = e => {
-    setFormData(prevState => ({
-      ...prevState,
-      [e.target.name]: e.target.value
-    }))
-  }
+  // const handleChange = e => {
+  //   setFormData(prevState => ({
+  //     ...prevState,
+  //     [e.target.name]: e.target.value
+  //   }))
+  // }
+
+
 
 
   return (
@@ -63,9 +60,8 @@ export default function New() {
                   <label className="form-label" htmlFor="name">Name:</label>
                   <input type="text" id='name'
                     className="form-control"
-                    onChange={handleChange}
+                    // onChange={handleChange}
                     name="name"
-                    value={name}
                     required />
                 </div>
 
@@ -73,9 +69,8 @@ export default function New() {
                   <label className="form-label" htmlFor="location">Nearest Station or Neighborhood:</label>
                   <input type="text" id='location'
                     className="form-control"
-                    onChange={handleChange}
+                    // onChange={handleChange}
                     name="location"
-                    value={location}
                     required />
                 </div>
 
@@ -83,7 +78,7 @@ export default function New() {
                   <label className="form-label" htmlFor="country">Food from which country?</label>
                   <select id="country"
                     className="form-select"
-                    onChange={handleChange}
+                    // onChange={handleChange}
                     name="country"
                     value={country} >
                     <option value="spain">Spain</option>
@@ -100,36 +95,40 @@ export default function New() {
                       <input type="radio" id="spain"
                         value="spain"
                         name="country"
-                        onChange={handleChange}
-                        checked />
+                        // onChange={handleChange}
+                        defaultChecked />
                       <p className="btn-flag-form" title="Spain">🇪🇸</p>  {/* title attribute to display the country's name when hover */}
                     </label>
                     <label>
                       <input type="radio" id="mexico"
                         value="mexico"
                         name="country"
-                        onChange={handleChange} />
+                      // onChange={handleChange} 
+                      />
                       <p className="btn-flag-form" title="Mexico">🇲🇽</p>
                     </label>
                     <label>
                       <input type="radio" id="peru"
                         value="peru"
                         name="country"
-                        onChange={handleChange} />
+                      // onChange={handleChange} 
+                      />
                       <p className="btn-flag-form" title="Perú">🇵🇪</p>
                     </label>
                     <label>
                       <input type="radio" id="colombia"
                         value="colombia"
                         name="country"
-                        onChange={handleChange} />
+                      // onChange={handleChange} 
+                      />
                       <p className="btn-flag-form" title="Colombia">🇨🇴</p>
                     </label>
                     <label>
                       <input type="radio" id="argentina"
                         value="argentina"
                         name="country"
-                        onChange={handleChange} />
+                      // onChange={handleChange} 
+                      />
                       <p className="btn-flag-form" title="Argentina">🇦🇷</p>
                     </label>
                   </div>
@@ -139,9 +138,8 @@ export default function New() {
                   <label className="form-label" htmlFor="url">Google Maps URL:</label>
                   <input type="text" id='url'
                     className="form-control"
-                    onChange={handleChange}
+                    // onChange={handleChange}
                     name="url"
-                    value={url}
                     required />
                 </div>
 
@@ -149,9 +147,9 @@ export default function New() {
                   <label className="form-label" htmlFor="image">Image URL</label>
                   <input type="text" id='image'
                     className="form-control"
-                    onChange={handleChange}
+                    // onChange={handleChange}
                     name="image"
-                    value={image} />
+                  />
                 </div>
 
                 <div className="mb-3 d-grid">
