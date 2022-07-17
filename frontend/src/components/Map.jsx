@@ -16,6 +16,8 @@ const Marker = ({ restaurant }) => {
       {restaurant.country === 'peru' && <div className="btn-flag-card">🇵🇪</div>}
       {restaurant.country === 'argentina' && <div className="btn-flag-card">🇦🇷</div>}
       {restaurant.country === 'colombia' && <div className="btn-flag-card">🇨🇴</div>}
+      {restaurant.country === 'cuba' && <div className="btn-flag-card">🇨🇺</div>}
+      {restaurant.country === 'chile' && <div className="btn-flag-card">🇨🇱</div>}
       {restaurant.country === 'other' && <div className="btn-flag-card">🗺</div>}
     </div>
   );
@@ -30,8 +32,8 @@ export default function Map({ restaurants }) {
     const map = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/light-v10',  // light-v10, streets-v11
-      center: [139.7397, 35.6694],
-      zoom: 10.62,
+      center: [139.7101082, 35.6724984],
+      zoom: 11.8,
       maxBounds: [
         { lat: 35.195384, lng: 138.718320 }, // SW
         { lat: 35.911546, lng: 140.290738 } // NE
