@@ -7,3 +7,4 @@
 - in List.jsx, change bootstrap grid by a normal css grid.
 - sticky header when scrolling.
 - in Header, red dot for the j in allscreen sizes.
+- change add-restaurant-button hover effect.
