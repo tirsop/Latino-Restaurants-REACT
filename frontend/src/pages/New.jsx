@@ -97,7 +97,10 @@ export default function New() {
                         name="country"
                         // onChange={handleChange}
                         defaultChecked />
-                      <p className="btn-flag-form" title="Spain">🇪🇸</p>  {/* title attribute to display the country's name when hover */}
+                      <div className="btn-flag-form">
+                        <p className="flag-icon" title="Spain">🇪🇸</p>  {/* title attribute to display the country's name when hover */}
+                        <p className="flag-name">Spain</p>
+                      </div>
                     </label>
                     <label>
                       <input type="radio" id="mexico"
@@ -105,7 +108,10 @@ export default function New() {
                         name="country"
                       // onChange={handleChange} 
                       />
-                      <p className="btn-flag-form" title="Mexico">🇲🇽</p>
+                      <div className="btn-flag-form">
+                        <p className="flag-icon" title="Mexico">🇲🇽</p>
+                        <p className="flag-name">Mexico</p>
+                      </div>
                     </label>
                     <label>
                       <input type="radio" id="peru"
@@ -113,7 +119,10 @@ export default function New() {
                         name="country"
                       // onChange={handleChange} 
                       />
-                      <p className="btn-flag-form" title="Perú">🇵🇪</p>
+                      <div className="btn-flag-form">
+                        <p className="flag-icon" title="Peru">🇵🇪</p>
+                        <p className="flag-name">Peru</p>
+                      </div>
                     </label>
                     <label>
                       <input type="radio" id="colombia"
@@ -121,7 +130,10 @@ export default function New() {
                         name="country"
                       // onChange={handleChange} 
                       />
-                      <p className="btn-flag-form" title="Colombia">🇨🇴</p>
+                      <div className="btn-flag-form">
+                        <p className="flag-icon" title="Colombia">🇨🇴</p>
+                        <p className="flag-name">Colombia</p>
+                      </div>
                     </label>
                     <label>
                       <input type="radio" id="argentina"
@@ -129,7 +141,10 @@ export default function New() {
                         name="country"
                       // onChange={handleChange} 
                       />
-                      <p className="btn-flag-form" title="Argentina">🇦🇷</p>
+                      <div className="btn-flag-form">
+                        <p className="flag-icon" title="Argentina">🇦🇷</p>
+                        <p className="flag-name">Argentina</p>
+                      </div>
                     </label>
                   </div>
                 </div>
