@@ -1,0 +1,9 @@
+- in Nex.jsx, put a dropdown when user can specify any other latin country.
+- include much more restaurants in the db.
+- MAP: change markes to become flags of the country. 
+  popup window with name, img and country which is a link to url
+  change map style
+- error message & loading message when connecting to db.
+- in List.jsx, change bootstrap grid by a normal css grid.
+- sticky header when scrolling.
+- in Header, red dot for the j in allscreen sizes.
