@@ -9,14 +9,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-
-
-// todo: red-dot in mobile
-// todo: sticky header
-// todo: map
-// todo: flags in form
-// todo: if conditional for the flags in the card
-// todo:
-// todo:
-// todo:

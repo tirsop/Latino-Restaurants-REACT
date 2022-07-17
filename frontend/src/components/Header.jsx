@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-
 // styles
 import './Header.css'
 
@@ -20,6 +19,3 @@ export default function Header() {
     </div>
   )
 }
-
-// todo: button occupies more space than it should be in small screen
-// todo: sticky header

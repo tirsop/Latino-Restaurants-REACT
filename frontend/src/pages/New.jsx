@@ -6,20 +6,13 @@ import './New.css'
 
 
 export default function New() {
-  // const [name, setName] = useState('')
-  // const [location, setLocation] = useState('')
-  // const [country, setCountry] = useState('Spain')
-  // const [url, setUrl] = useState('')
-  // const [image, setImage] = useState('')
-
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData(e.target);
-    const data = Object.fromEntries([...formData.entries()]);
+    const data = Object.fromEntries([...formData.entries()]);   // convert array of arrays into an object
     try {
-      // const response = await fetch('http://localhost:3001/api/restaurants', {
       const response = await fetch('/api/restaurants', {
         method: 'POST',
         headers: {
@@ -34,16 +27,6 @@ export default function New() {
       alert(error.message || 'Something went wrong!');
     }
   }
-
-  // const handleChange = e => {
-  //   setFormData(prevState => ({
-  //     ...prevState,
-  //     [e.target.name]: e.target.value
-  //   }))
-  // }
-
-
-
 
   return (
     <div className='container'>
@@ -60,7 +43,6 @@ export default function New() {
                   <label className="form-label" htmlFor="name">Name:</label>
                   <input type="text" id='name'
                     className="form-control"
-                    // onChange={handleChange}
                     name="name"
                     required />
                 </div>
@@ -73,20 +55,6 @@ export default function New() {
                     name="location"
                     required />
                 </div>
-
-                {/* <div className="mb-3">
-                  <label className="form-label" htmlFor="country">Food from which country?</label>
-                  <select id="country"
-                    className="form-select"
-                    // onChange={handleChange}
-                    name="country"
-                    value={country} >
-                    <option value="spain">Spain</option>
-                    <option value="mexico">Mexico</option>
-                    <option value="peru">Peru</option>
-                    <option value="others">Other Latin Countries</option>
-                  </select>
-                </div> */}
 
                 <div className="mb-3">
                   <span className="form-label">Food from which country?</span>
@@ -171,7 +139,6 @@ export default function New() {
                   <label className="form-label" htmlFor="url">Google Maps URL:</label>
                   <input type="text" id='url'
                     className="form-control"
-                    // onChange={handleChange}
                     name="url"
                     required />
                 </div>
@@ -180,7 +147,6 @@ export default function New() {
                   <label className="form-label" htmlFor="image">Image URL</label>
                   <input type="text" id='image'
                     className="form-control"
-                    // onChange={handleChange}
                     name="image"
                   />
                 </div>
