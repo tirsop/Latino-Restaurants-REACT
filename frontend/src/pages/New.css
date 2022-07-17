@@ -6,12 +6,7 @@
   object-fit: cover;
 }
 
-
-/* .radio-item {
-  display: none;
-} */
-
-
+/* ----------------------- GENERAL RADIO-BUTTONS STYLES-------------------------- */
 /* HIDE RADIO */
 [type=radio] { 
   position: absolute;
@@ -19,7 +14,6 @@
   width: 0;
   height: 0;
 }
-
 /* IMAGE STYLES */
 [type=radio] + div {
   cursor: pointer;
@@ -29,11 +23,22 @@
   outline: 2px solid #a9edce;
   border-radius: 5px;
 }
-
 /* CHECKED STYLES */
-[type=radio]:checked + p {
+[type=radio]:checked + div {
   outline: 2px solid #198754;
   border-radius: 5px;
+}
+/* ----------------------------------------------------------------------- */
+.flag-buttons {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn-flag-form {
+  padding: 0px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .flag-icon {
   font-size: 32px;
@@ -44,15 +49,7 @@
   font-size: 12px;
   font-style: italic;
 }
-.btn-flag-form {
-  padding: 0px 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.flag-buttons {
-  margin-top: 8px;
-  display: flex;
-  justify-content: space-evenly;
+.radio-img {
+  height: 36px;
+  width: auto;
 }

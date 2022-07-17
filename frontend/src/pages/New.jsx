@@ -95,7 +95,6 @@ export default function New() {
                       <input type="radio" id="spain"
                         value="spain"
                         name="country"
-                        // onChange={handleChange}
                         defaultChecked />
                       <div className="btn-flag-form">
                         <p className="flag-icon" title="Spain">🇪🇸</p>  {/* title attribute to display the country's name when hover */}
@@ -106,7 +105,6 @@ export default function New() {
                       <input type="radio" id="mexico"
                         value="mexico"
                         name="country"
-                      // onChange={handleChange} 
                       />
                       <div className="btn-flag-form">
                         <p className="flag-icon" title="Mexico">🇲🇽</p>
@@ -117,7 +115,6 @@ export default function New() {
                       <input type="radio" id="peru"
                         value="peru"
                         name="country"
-                      // onChange={handleChange} 
                       />
                       <div className="btn-flag-form">
                         <p className="flag-icon" title="Peru">🇵🇪</p>
@@ -125,28 +122,49 @@ export default function New() {
                       </div>
                     </label>
                     <label>
-                      <input type="radio" id="colombia"
-                        value="colombia"
-                        name="country"
-                      // onChange={handleChange} 
-                      />
-                      <div className="btn-flag-form">
-                        <p className="flag-icon" title="Colombia">🇨🇴</p>
-                        <p className="flag-name">Colombia</p>
-                      </div>
-                    </label>
-                    <label>
                       <input type="radio" id="argentina"
                         value="argentina"
                         name="country"
-                      // onChange={handleChange} 
                       />
                       <div className="btn-flag-form">
                         <p className="flag-icon" title="Argentina">🇦🇷</p>
                         <p className="flag-name">Argentina</p>
                       </div>
                     </label>
+                    <label>
+                      <input type="radio" id="other"
+                        value="other"
+                        name="country"
+                      />
+                      <div className="btn-flag-form">
+                        <img className="radio-img" src="https://st2.depositphotos.com/4202565/6631/v/380/depositphotos_66318347-stock-illustration-latin-america-map.jpg?forcejpeg=true" alt="Latin America map" title="other latin countries" />
+                        <p className="flag-name">Other</p>
+                      </div>
+                    </label>
                   </div>
+                  {/* <span className="form-label ms-3">If other, please specify:</span>
+                  <label>
+                    <select id="country" className="form-select ms-3" name="country" >
+                      <option defaultValue> -- select an option -- </option>
+                      <option value="bolivia">Bolivia</option>
+                      <option value="brasil">Brasil</option>
+                      <option value="chile">Chile</option>
+                      <option value="costa rica">Costa Rica</option>
+                      <option value="cuba">Cuba</option>
+                      <option value="ecuador">Ecuador</option>
+                      <option value="el salvador">El Salvador</option>
+                      <option value="guatemala">Guatemala</option>
+                      <option value="haiti">Haití</option>
+                      <option value="honduras">Honduras</option>
+                      <option value="nicaragua">Nicaragua</option>
+                      <option value="panama">Panamá</option>
+                      <option value="paraguay">Paraguay</option>
+                      <option value="republica dominicana">República Dominicana</option>
+                      <option value="uruguay">Uruguay</option>
+                      <option value="venezuela">Venezuela</option>
+                      <option value="others">Other, Mix, Fushion</option>
+                    </select>
+                  </label> */}
                 </div>
 
                 <div className="mb-3">

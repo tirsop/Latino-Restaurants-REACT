@@ -15,8 +15,8 @@ export default function Restaurant({ restaurant }) {
             {restaurant.country === 'spain' && <div className="btn-flag-card">🇪🇸</div>}
             {restaurant.country === 'mexico' && <div className="btn-flag-card">🇲🇽</div>}
             {restaurant.country === 'peru' && <div className="btn-flag-card">🇵🇪</div>}
-            {restaurant.country === 'colombia' && <div className="btn-flag-card">🇨🇴</div>}
             {restaurant.country === 'argentina' && <div className="btn-flag-card">🇦🇷</div>}
+            {restaurant.country === 'other' && <div className="btn-flag-card">🗺</div>}
             {/* todo: check conditonal above and style */}
           </div>
         </div>
