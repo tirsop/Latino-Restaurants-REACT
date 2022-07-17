@@ -7,21 +7,17 @@ import './Map.css'
 // tokens
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
-// const Marker = ({ onClick, children, feature }) => {
-//   const _onClick = () => {
-//     onClick(feature.properties.description);
-//   };
 
-//   return (
-//     <button onClick={_onClick} className="marker">
-//       {children}
-//     </button>
-//   );
-// };
-
-const Marker = () => {
+const Marker = ({ restaurant }) => {
   return (
-    <>🇪🇸</>
+    <div>
+      {restaurant.country === 'spain' && <div className="btn-flag-card">🇪🇸</div>}
+      {restaurant.country === 'mexico' && <div className="btn-flag-card">🇲🇽</div>}
+      {restaurant.country === 'peru' && <div className="btn-flag-card">🇵🇪</div>}
+      {restaurant.country === 'argentina' && <div className="btn-flag-card">🇦🇷</div>}
+      {restaurant.country === 'colombia' && <div className="btn-flag-card">🇨🇴</div>}
+      {restaurant.country === 'other' && <div className="btn-flag-card">🗺</div>}
+    </div>
   );
 };
 
@@ -42,11 +38,6 @@ export default function Map({ restaurants }) {
       ]
     });
 
-    // // Create default markers
-    // restaurants.map((restaurant) =>
-    //   new mapboxgl.Marker().setLngLat(restaurant.geometry.coordinates).addTo(map)
-    // );
-
     // Render custom marker components
     restaurants.forEach((restaurant) => {
       // Create a React ref
@@ -56,12 +47,26 @@ export default function Map({ restaurants }) {
       // Render a Marker Component on our new DOM node
       const markerRoot = ReactDOM.createRoot(ref.current);
       markerRoot.render(
-        <Marker />
+        <Marker restaurant={restaurant} />
       );
 
-      // Create a Mapbox Marker at our new DOM node
+      // Create a Mapbox Marker at our new DOM node.
       new mapboxgl.Marker(ref.current)
         .setLngLat(restaurant.geometry.coordinates)
+        .setPopup(
+          new mapboxgl.Popup({ offset: 23 })
+            .setHTML(`
+              <div class="popup">
+                <a href=${restaurant.url} class="text-decoration-none" target="_blank" rel="noreferrer">
+                  <img src=${restaurant.image} class="img-fluid popup-img" alt="Restaurant's front door" />
+                    <div class="">
+                      <h5 class="text-dark text-center fs-5 fw-light mt-1 mb-0 px-2">${restaurant.name}</h5>
+                      <p class="text-muted text-center fs-6 pb-2 mb-0"> in ${restaurant.location}</p>
+                    </div>
+                </a>
+              </div>
+          `)
+        )
         .addTo(map);
     });
 

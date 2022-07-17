@@ -11,7 +11,7 @@ export default function Restaurant({ restaurant }) {
             <h5 className="text-dark fs-5 fw-light mt-1 mb-0">{restaurant.name}</h5>
             <p className="text-muted fs-6">{restaurant.location}</p>
           </div>
-          <div className="">
+          <div>
             {restaurant.country === 'spain' && <div className="btn-flag-card">🇪🇸</div>}
             {restaurant.country === 'mexico' && <div className="btn-flag-card">🇲🇽</div>}
             {restaurant.country === 'peru' && <div className="btn-flag-card">🇵🇪</div>}

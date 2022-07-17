@@ -10,3 +10,4 @@
 - sticky header when scrolling.
 - in Header, red dot for the j in allscreen sizes.
 - change add-restaurant-button hover effect.
+- dark and light mode
