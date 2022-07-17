@@ -3,7 +3,8 @@
   max-width: inherit;
   height: 50vh;
   position: fixed;
-  z-index: -1;
+  top: 162px;
+  z-index: -1px;
 }
 .popup {
   max-width: 240px;
