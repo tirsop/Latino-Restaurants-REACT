@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Link, useNavigate } from 'react-router-dom'
 // import { toast } from 'react-toastify'
 // styles
@@ -51,7 +50,6 @@ export default function New() {
                   <label className="form-label" htmlFor="location">Nearest Station or Neighborhood:</label>
                   <input type="text" id='location'
                     className="form-control"
-                    // onChange={handleChange}
                     name="location"
                     required />
                 </div>
