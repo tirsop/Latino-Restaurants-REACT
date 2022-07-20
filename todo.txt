@@ -12,3 +12,8 @@ X - sticky header when scrolling.
 - change add-restaurant-button hover effect.
 - dark and light mode
 - let user upload more photos and display in carousel
+- react-i18n (inte) for adding multi language support for the app.
+- style components
+- remove bootstrap -->radix UI
+- JEST y cypress
+- CI, Agile, scrum, canvas board

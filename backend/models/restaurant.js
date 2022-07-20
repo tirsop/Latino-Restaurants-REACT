@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const RestaurantSchema = new mongoose.Schema({
   name: String,
+  nameLowerCase: String,
   location: String,
   country: String,
   url: String,

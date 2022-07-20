@@ -19,6 +19,7 @@ const addRestaurant = async () => {
   await Restaurant.insertMany([
     {
       name: 'Miguel y Juani',
+      nameLowerCase: 'miguel y juani',
       location: 'Shinjuku',
       country: 'spain',
       url: 'https://www.google.com/maps/place/%E3%83%9F%E3%82%B2%E3%83%AB%E3%83%95%E3%82%A2%E3%83%8B+%E6%96%B0%E5%AE%BF%E3%82%BF%E3%82%AB%E3%82%B7%E3%83%9E%E3%83%A4%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E5%BA%97/@35.6874274,139.7023764,15z/data=!4m5!3m4!1s0x0:0xe530a241f7a00b9a!8m2!3d35.6874274!4d139.7023764',
@@ -33,6 +34,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'EL ROSSELLO',
+      nameLowerCase: 'el rosello',
       location: 'Meguro',
       country: 'spain',
       url: 'https://goo.gl/maps/BfMftRk9ADCWwxLH8',
@@ -47,6 +49,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Amets',
+      nameLowerCase: 'amets',
       location: 'Asakusa',
       country: 'spain',
       url: 'https://goo.gl/maps/qZnwv9aaip1nQdb89',
@@ -61,6 +64,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'El Chateo',
+      nameLowerCase: 'el chateo',
       location: 'Ginza',
       country: 'spain',
       url: 'https://g.page/elchateo-ginza?share',
@@ -75,6 +79,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'La Pesquera MARISQUERIA',
+      nameLowerCase: 'la pesquera marisqueria',
       location: 'Otemachi',
       country: 'spain',
       url: 'https://g.page/lapesqueramarisqueria?share',
@@ -89,6 +94,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Bar Portillo de sal y amor',
+      nameLowerCase: 'bar portillo de sal y amor',
       location: 'Naka-Meguro',
       country: 'spain',
       url: 'https://g.page/Bar-Portillo-Nakameguro?share',
@@ -103,6 +109,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'La Coquina cervecería',
+      nameLowerCase: 'la coquina cervecería',
       location: 'Shibuya',
       country: 'spain',
       url: 'https://g.page/LaCoquina?share',
@@ -117,6 +124,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'La Cabina',
+      nameLowerCase: 'la cabina',
       location: 'Shibuya',
       country: 'mexico',
       url: 'https://g.page/lacabinatokyo?share',
@@ -131,6 +139,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Frijoles',
+      nameLowerCase: 'frijoles',
       location: 'Daikanyama',
       country: 'mexico',
       url: 'https://goo.gl/maps/7uourPg8ednRXFw98',
@@ -145,6 +154,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Bépocah',
+      nameLowerCase: 'bépocah',
       location: 'Harayuku',
       country: 'peru',
       url: 'https://g.page/bepocah?share',
@@ -159,6 +169,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Medellin Yokohama',
+      nameLowerCase: 'medellin yokohama',
       location: 'Yokohama',
       country: 'colombia',
       url: 'https://goo.gl/maps/UhfhWReTQbooS53PA',
@@ -173,6 +184,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Mi Choripan',
+      nameLowerCase: 'mi choripan',
       location: 'Yoyogi',
       country: 'argentina',
       url: 'https://goo.gl/maps/ijZRJcMp4LRLi1jX6',
@@ -187,6 +199,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Casa De Sarasa',
+      nameLowerCase: 'casa de sarasa',
       location: 'Shibuya',
       country: 'mexico',
       url: 'https://www.google.com/maps/place/Casa+De+Sarasa/@35.6564443,139.6982957,16z/data=!3m1!5s0x60188ca9817f8879:0x6df0fa11620df23d!4m9!1m2!2m1!1smexican+restaurant!3m5!1s0x60188ca9819c5ca7:0xa8c296df8d863cb!8m2!3d35.660224!4d139.696557!15sChJtZXhpY2FuIHJlc3RhdXJhbnRaFCISbWV4aWNhbiByZXN0YXVyYW50kgESbWV4aWNhbl9yZXN0YXVyYW50mgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVVJwTTI4emRuaG5SUkFC',
@@ -198,6 +211,7 @@ const addRestaurant = async () => {
     },
     {
       name: '月島スペインクラブ',
+      nameLowerCase: '月島スペインクラブ',
       location: 'Tsukishima',
       country: 'spain',
       url: 'https://www.google.com/maps/place/%E6%9C%88%E5%B3%B6%E3%82%B9%E3%83%9A%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%A9%E3%83%96/@35.6658177,139.7823354,15z/data=!4m5!3m4!1s0x0:0xf2f5f0bccd39c79a!8m2!3d35.6658389!4d139.782303',
@@ -209,6 +223,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Zurriola',
+      nameLowerCase: 'zurriola',
       location: 'Ginza',
       country: 'spain',
       url: 'https://www.google.com/maps/place/Zurriola/@35.6701352,139.7606705,17z/data=!3m2!4b1!5s0x60188be61c350abb:0x1fa7ec239da6c73!4m5!3m4!1s0x60188be61c479097:0x787fb2d183033ddf!8m2!3d35.6701309!4d139.7628592',
@@ -220,6 +235,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Casa de Eduardo',
+      nameLowerCase: 'casa de eduardo',
       location: 'Shin-Nakano',
       country: 'chile',
       url: 'https://www.google.com/maps/place/Casa+de+Eduardo/@35.6980415,139.6679935,17z/data=!3m1!4b1!4m5!3m4!1s0x6018f2ea028fffff:0xf903d0a79866987e!8m2!3d35.6980372!4d139.6701822',
@@ -231,6 +247,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Bar Bodeguita',
+      nameLowerCase: 'bar bodeguita',
       location: 'Shimo-Kitazawa',
       country: 'cuba',
       url: 'https://www.google.com/maps/place/Bar+Bodeguita+Cuban+Salsa+Spot/@35.655868,139.6673625,15z/data=!4m5!3m4!1s0x0:0x3fa2ef9d0ad01af0!8m2!3d35.655868!4d139.6673625',
@@ -242,6 +259,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'El Pescador',
+      nameLowerCase: 'el pescador',
       location: 'Jiyugaoka',
       country: 'spain',
       url: 'https://www.google.com/maps/place/El+Pescador/@35.6080355,139.6704423,15z/data=!4m5!3m4!1s0x0:0x76654e5f3f903b3!8m2!3d35.6080355!4d139.6704423',
@@ -253,6 +271,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'La Jolla',
+      nameLowerCase: 'la jolla',
       location: 'Hiro-o',
       country: 'mexico',
       url: 'https://www.google.com/maps/place/La+Jolla/@35.6501075,139.7189266,17.16z/data=!3m1!5s0x60188b6d45cc8869:0x947119974a26765c!4m5!3m4!1s0x60188b6d46856c55:0x9b06daa42a680def!8m2!3d35.6500752!4d139.7208022',
@@ -264,6 +283,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'anchoa',
+      nameLowerCase: 'anchoa',
       location: 'Kamakura',
       country: 'spain',
       url: 'https://www.google.com/maps/place/anchoa+%E3%82%A2%E3%83%B3%E3%83%81%E3%83%A7%E3%82%A2/@35.3176037,139.5500623,15z/data=!4m5!3m4!1s0x0:0x812384135dde0b5d!8m2!3d35.3176029!4d139.5500655',
@@ -275,6 +295,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Keimi',
+      nameLowerCase: 'keimi',
       location: 'Tsuruma',
       country: 'peru',
       url: 'https://www.google.com/maps/place/KEIMI/@35.4923262,139.4391514,15z/data=!4m12!1m6!3m5!1s0x0:0x9fe5b0a4ff11434a!2sKEIMI!8m2!3d35.4922925!4d139.4479307!3m4!1s0x0:0x9fe5b0a4ff11434a!8m2!3d35.4922925!4d139.4479307',
@@ -286,6 +307,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Fonda Sant Jordi',
+      nameLowerCase: 'fonda sant jordi',
       location: 'Ebisu',
       country: 'spain',
       url: 'https://www.google.com/maps/place/Fonda+Sant+Jordi/@35.6467506,139.71214,15z/data=!4m5!3m4!1s0x0:0xb3f2c36e60cfada4!8m2!3d35.6467506!4d139.71214',
@@ -297,6 +319,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Sant Pau',
+      nameLowerCase: 'sant pau',
       location: 'Nagatacho',
       country: 'spain',
       url: 'https://www.google.com/maps/place/Sant+Pau/@35.6791162,139.7408068,15z/data=!4m2!3m1!1s0x0:0xcd9af6901ee10dcf?sa=X&ved=2ahUKEwjc0fCAxv_4AhU0pVYBHRRjD_UQ_BJ6BAhQEAU',
@@ -308,6 +331,7 @@ const addRestaurant = async () => {
     },
     {
       name: 'Estación',
+      nameLowerCase: 'estación',
       location: 'Iidabashi',
       country: 'spain',
       url: 'https://www.google.com/maps/place/Estaci%C3%B3n+%E3%82%A8%E3%82%B9%E3%82%BF%E3%82%B7%E3%82%AA%E3%83%B3/@35.7006875,139.7406419,15z/data=!4m5!3m4!1s0x0:0xd60c5dd865342aea!8m2!3d35.7007097!4d139.740632',
@@ -319,6 +343,7 @@ const addRestaurant = async () => {
     },
     // {
     //   name: '',
+    //   nameLowerCase: '',
     //   location: '',
     //   country: '',
     //   url: '',
