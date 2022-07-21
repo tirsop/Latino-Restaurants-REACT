@@ -5,7 +5,8 @@ X   popup window with name, img and country which is a link to url
 X   change map style
 - in Nex.jsx, put a dropdown when user can specify any other latin country.
 X - include much more restaurants in the db.
-- error message & loading message when connecting to db.
+X- sppiner when loading data
+- error message when connecting to db.
 - in List.jsx, change bootstrap grid by a normal css grid.
 X - sticky header when scrolling.
 - in Header, red dot for the j in allscreen sizes.
