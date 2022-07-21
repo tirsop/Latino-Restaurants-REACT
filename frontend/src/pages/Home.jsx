@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Map from "../components/Map";
 import List from "../components/List";
+import Spinner from '../components/Spinner'
 
 
 export default function Home() {
@@ -28,8 +29,11 @@ export default function Home() {
     <>
       <Header />
       <Map restaurants={restaurants} />
-      {isPending && <p>Loading...</p>}
       {restaurants && <List restaurants={restaurants} />}
+      {isPending &&
+        <div className="d-flex justify-content-center">
+          {<Spinner />}
+        </div>}
     </>
   )
 }

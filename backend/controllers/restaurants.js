@@ -26,7 +26,7 @@ const restaurants = {
     // chech if restaurant exists:
     const restaurantExists = await Restaurant.findOne({ nameLowerCase: restaurant.nameLowerCase });
     if (restaurantExists) {
-      return res.status(400).json(`${restaurant.name.trim()} already exist in our list!`)
+      return res.status(400).json(`${restaurant.name.trim()} already exists in our list!`)
     }
     // geocode its location
     const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${req.body.restaurant.location}.json?bbox=139.390154,35.236550,140.045214,35.902352&limit=1&access_token=${mapBoxToken}`);
