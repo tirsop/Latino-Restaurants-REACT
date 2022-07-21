@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-// import { toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 // styles
 import './New.css'
 
@@ -21,6 +21,15 @@ export default function New() {
       });
       const resData = await response.json();
       console.log(resData);
+      toast.success('🌮 Restaurant created!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       navigate('/')
     } catch (error) {
       alert(error.message || 'Something went wrong!');
