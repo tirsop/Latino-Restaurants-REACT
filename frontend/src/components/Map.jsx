@@ -32,7 +32,7 @@ export default function Map({ restaurants }) {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/light-v10',  // light-v10, streets-v11
       center: [139.7101082, 35.6724984],
-      zoom: 11.8,
+      zoom: 11,
       maxBounds: [
         { lat: 35.195384, lng: 138.718320 }, // SW
         { lat: 35.911546, lng: 140.290738 } // NE
